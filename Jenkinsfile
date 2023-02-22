@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        python {
-            label 'master'
-            version '3.9.15'
-        }
-    }
+    agent any
     stages {
         stage('INSTALLATION') {
             steps {
