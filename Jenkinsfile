@@ -1,14 +1,22 @@
 pipeline {
     agent any
     stages {
-        stage('INSTALLATION') {
+        stage('Check Python Version') {
             steps {
-                echo 'Run the static analysis OKKKKK' 
+                sh 'python -V'
+                echo 'Py Test Installed' 
+            }
+        }
+        stage('Installation') {
+            steps {
+                sh 'pip install pytest'
+                echo 'Py Test Installed' 
             }
         }
         stage('Compile') {
             steps {
-                echo 'Compile the source code' 
+                sh 'pytest test.py'
+                echo 'Test Ran Successful' 
             }
         }
     }
