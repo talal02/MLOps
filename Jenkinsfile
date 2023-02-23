@@ -3,19 +3,19 @@ pipeline {
     stages {
         stage('Check Python Version') {
             steps {
-                sh 'python -V'
+                bat 'python -V'
                 echo 'Py Test Installed' 
             }
         }
         stage('Installation') {
             steps {
-                sh 'pip install pytest'
+                bat 'pip install pytest'
                 echo 'Py Test Installed' 
             }
         }
         stage('Compile') {
             steps {
-                sh 'pytest test.py'
+                bat 'pytest test.py'
                 echo 'Test Ran Successful' 
             }
         }
